@@ -1,0 +1,53 @@
+<section>
+  <app-albums-details [show]="album"></app-albums-details>
+  <app-albums-descriptions></app-albums-descriptions>
+<!-- <app-audio-player></app-audio-player> -->
+<app-login></app-login>
+<!-- <app-paginate></app-paginate> -->
+<!-- <app-search></app-search> -->
+</section>
+
+
+<div class="card mx-5 my-5" *ngFor="let album of albumslist" >
+  <h5 class="card-header bg-primary text-light">{{ album.ref }}</h5>
+  <div class="card-body">
+    <h5 class="card-title" ><a routerLink="album/{{ album.id }}">{{ album.id }}-{{ album.title }}</a></h5>
+    <p class="card-text">{{ album.description }}</p>
+    <ul>
+      <li class="badge text-bg-info mx-2 text-light" *ngFor="let tag of album.tags">
+        <span>{{ tag }}</span>
+      </li>
+    </ul>
+    <a href="#" class="btn btn-primary" >en</a>
+    <small>💙{{ album.like }}</small>
+    <small>⏱{{ album.duration }} min</small>
+    <button class="btn btn-primary"  (click)="showAside(album.id)">Details</button>
+
+  </div>
+</div>
+
+
+<!-- 
+<article >
+  <div class="card">
+    <div class="card-header" ></div>
+  </div>
+
+  
+  <div class="card-body" >
+    <h2  class="card-title">
+      <a routerLink="album/{{ album.id }}">{{ album.id }}-{{ album.title }}</a>
+    </h2>
+    <p  class="card-text">{{ album.description }}</p>
+    <ul>
+      <li *ngFor="let tag of album.tags">
+        <span>{{ tag }}</span>
+      </li>
+    </ul>
+    <a class="btn btn-primary" href="#">en</a>
+    <small>💙{{ album.like }}</small>
+    <small>⏱{{ album.duration }} min</small>
+    <button (click)="showAside(album.id)">Details</button>
+  </div>
+</article> -->
+<div></div>
