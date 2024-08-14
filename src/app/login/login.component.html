@@ -1,37 +1,25 @@
-<form>
-  <label for="email">Email address</label>
-  <input
-    type="text"
-    id="email"
-    name="email"
-    placeholder="Enter email"
-    ngModel
-    email
-    required
-  />
-  <small id="emailHelp">We'll never share your email with anyone else.</small>
+<div>
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-  <label for="pwd">Password</label>
-  <input
-    type="password"
-    id="pwd"
-    placeholder="Password"
-    name="password"
-    ngModel
-    required
-  />
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-  <input
-    type="checkbox"
-    id="checkout"
-    name="logged"
-    ngModel
-  />
-  <label for="checkout">Stay logged in</label>
+    <label for="">Password</label>
+    <input type="text" id="" name="" placeholder="Your password..">
 
-  <button
-    type="submit"
-  >
-    Submit
-  </button>
-</form>
+    <label for="">Email</label>
+    <input type="email" id="" name="" >
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>

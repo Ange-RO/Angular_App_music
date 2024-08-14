@@ -11,6 +11,7 @@ import { AudioPlayerComponent } from './audio-player/audio-player.component';
 import { LoginComponent } from './login/login.component';
 import { PaginateComponent } from './paginate/paginate.component';
 import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,13 @@ import { SearchComponent } from './search/search.component';
     AudioPlayerComponent,
     LoginComponent,
     PaginateComponent,
-    SearchComponent
+    SearchComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,31 +1,52 @@
 <section>
-  <app-albums-details [show]="album"></app-albums-details>
-  <app-albums-descriptions></app-albums-descriptions>
+  <!-- <app-albums-details [show]="album"></app-albums-details> -->
 <!-- <app-audio-player></app-audio-player> -->
-<app-login></app-login>
-<!-- <app-paginate></app-paginate> -->
+
+<app-paginate></app-paginate>
 <!-- <app-search></app-search> -->
-</section>
 
 
-<div class="card mx-5 my-5" *ngFor="let album of albumslist" >
-  <h5 class="card-header bg-primary text-light">{{ album.ref }}</h5>
-  <div class="card-body">
-    <h5 class="card-title" ><a routerLink="album/{{ album.id }}">{{ album.id }}-{{ album.title }}</a></h5>
-    <p class="card-text">{{ album.description }}</p>
-    <ul>
-      <li class="badge text-bg-info mx-2 text-light" *ngFor="let tag of album.tags">
-        <span>{{ tag }}</span>
-      </li>
-    </ul>
-    <a href="#" class="btn btn-primary" >en</a>
-    <small>💙{{ album.like }}</small>
-    <small>⏱{{ album.duration }} min</small>
-    <button class="btn btn-primary"  (click)="showAside(album.id)">Details</button>
-
-  </div>
+<div class="form">
+  
+    <input type="search" [(ngModel)]="keyword" (keyup)="recherche(keyword)"  >
+    <!-- <button class="btn btn-primary"  type="submit">Search</button> -->
 </div>
 
+
+
+<h1>Page principale Album</h1>
+</section>
+
+<div class="container">
+  
+  <div class="card mx-5 my-5" *ngFor="let album of albumslist" >
+    <h5 class="card-header bg-primary text-light">{{ album.ref }}</h5>
+    <div class="card-body">
+      <h5 class="card-title" ><a routerLink="album/{{ album.id }}">{{ album.id }}-{{ album.title }}</a></h5>
+      <p class="card-text">{{ album.description }}</p>
+      <ul>
+        <li class="badge text-bg-info mx-2 text-light" *ngFor="let tag of album.tags">
+          <span>{{ tag }}</span>
+        </li>
+      </ul>
+      <a href="#" class="btn btn-primary" >en</a>
+      <small>💙{{ album.like }}</small>
+      <small>⏱{{ album.duration }} min</small>
+  
+      <button class="btn btn-primary"  (click)="showAside(album.id)"  type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Details</button>
+  
+      <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" ><a routerLink="album/{{ album.id }}">{{ album.id }}-{{ album.title }}</a></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <img src="{{album.url}}" alt="image">
+      <p>{{album.description}}</p>
+    
+      </div>
+      </div>
+</div>
 
 <!-- 
 <article >
@@ -50,4 +71,3 @@
     <button (click)="showAside(album.id)">Details</button>
   </div>
 </article> -->
-<div></div>

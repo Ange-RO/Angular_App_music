@@ -1,3 +1,21 @@
-<img src="{{album?.url}}" alt="image">
+<!-- <img src="{{album?.url}}" alt="image">
 <h1>{{album?.title}}</h1>
-<p>{{album?.description}}</p>
+<p>{{album?.description}}</p> -->
+
+
+
+<div  >
+    <h5 class="card-header bg-primary text-light">{{ album?.ref }}</h5>
+    <div class="card-body">
+        <h5 class="card-title" ><a routerLink="album/{{ album?.id }}">{{ album?.id }}-{{ album?.title }}</a></h5>
+        <img src="{{album?.url}}" alt="image">
+      <p class="card-text">{{ album?.description }}</p>
+      <ul>
+        <li class="badge text-bg-info mx-2 text-light" >
+        </li>
+      </ul>
+      <a href="#" class="btn btn-primary" >en</a>
+      <small>💙{{ album?.like }}</small>
+      <small>⏱{{ album?.duration }} min</small>
+     
+  
